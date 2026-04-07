@@ -1,429 +1,503 @@
-/* Reset and Base Styles */
+/* styles.css */
+
+:root {
+  --font-family: "HelveticaNeue", sans-serif;
+}
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f0f0f0;
+/* Header */
+header {
+  background-color: #2b2b2b;
+  padding: 12px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+  gap: 250px;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 30px;
+/* Скрываем чекбокс */
+.menu-toggle {
+  display: none;
 }
 
-/* Header Styles */
-.header {
-    background-color: #373a3c;
-    color: white;
-    padding: 12px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+/* Гамбургер-иконка (скрыта на десктопе) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  padding: 5px;
+  z-index: 101;
 }
 
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  display: block;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+header .right{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+nav {
+  display: flex;
+  gap: 20px;
 }
 
-.xbox-logo {
-    width: 36px;
-    height: 36px;
+/* Навигация */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 160px;
+  background: #373a3c;
+  color: white;
+}
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+nav {
+  display: flex;
+  gap: 20px;
 }
 
-.one{
-    align-items: center;
-    display: flex;
-    gap: 5px;
+nav a {
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 100%;
+color: #fff;
+text-decoration: none;
 }
 
-.two{
-    align-items: center;
-    display: flex;
-    gap: 25px;
+nav a:hover {
+  color: white;
 }
-  
-
-.nav-list {
-    padding-left: 288px;
-    display: flex;
-    list-style: none;
-    gap: 25px;
-    align-items: center;
+.logo img {
+  height: 30px;
 }
 
-.nav-link {
-    color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s;
-    font-weight: 400;
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+.my-xbox{
+  font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 100%;
+color: rgba(255, 255, 255, 0.5);
 }
 
-.nav-link:hover,
-.nav-link.active {
-    color: #fff;
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 4px;
+  padding: 6px 12px;
+  gap: 8px;
 }
 
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 25px;
+.search-bar input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+width: 209px;
+height: 38px;
+
 }
 
-.search-input {
-    padding: 8px 15px;
-    border: 1px solid #555;
-    border-radius: 3px;
-    background-color: #ffffff;
-    color: white;
-    width: 220px;
-    font-size: 14px;
-}
-
-.search-input::placeholder {
-    color: #999;
-}
-
-.my-xbox {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.5);
-}
-
-/* Hero Section */
+/* Hero - используем Carousel.png как фон */
 .hero {
-    position: relative;
-    height: 650px;
-    margin-top: 60px;
-    overflow: hidden;
+  height: 550px;
+  background: url("./img/Group.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10%;
+  height: 550px;
+  position: relative;
+}
+h1 {
+  padding-top: 109px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 36px;
+  color: #fff;
+}
+.release-date {
+  padding-bottom: 140px;
+}
+.release-date p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
 }
 
-.hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url(./img/Group.png) center/cover no-repeat;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: right;
-    padding-top: 150px;
-}
-
-.hero-title {
-    font-size: 56px;
-    color: white;
-    margin-bottom: 8px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-.hero-subtitle {
-    font-size: 14px;
-    color: #ddd;
-    margin-bottom: 40px;
-    font-weight: 300;
-}
-
-/* Button Styles */
+/* Кнопки */
 .btn {
-    padding: 12px 32px;
-    border: none;
-    border-radius: 2px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-weight: 600;
-    text-transform: none;
+  padding: 12px 30px;
+  border: 100px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin: 5px;
+  transition: opacity 0.3s;
+  font-family: var(--font-family);
+}
+
+.btn:hover {
+  opacity: 0.9;
 }
 
 .btn-primary {
-    background-color: #7ED321;
-    color: white;
+  margin-bottom: 204px;
+  padding: 9px 29px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 131%;
+  color: #fff;
+  background: #8dd83d;
+  border-radius: 4px;
+}
+.btn-primary-next {
+  margin-bottom: 103px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 131%;
+  color: #fff;
+  background: #8dd83d;
+  border-radius: 4px;
+  width: 170px;
+height: 52px;
+}
+.btn-primary-sled{
+  font-family: var(--font-family);
+font-weight: 400;
+font-size: 18px;
+line-height: 117%;
+color: #fff;
+border-radius: 4px;
+height: 52px;
+background: #8dd83d;
 }
 
-.btn-primary:hover {
-    background-color: #6bc015;
-    transform: translateY(-2px);
+.btn-secondary {
+    padding: 9px 29px;
+  background: #8dd83d;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 131%;
+  color: #fff;
 }
 
 .btn-dark {
-    background-color: #333;
-    color: white;
+border-radius: 4px;
+width: 235px;
+height: 52px;
+background: linear-gradient(180deg, #686c6f 0%, #373a3c 100%);
+color: white;
+}
+body {
+  background: #efefef;
+}
+/* Контейнер */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
-.btn-dark:hover {
-    background-color: #444;
+/* Заголовок игры */
+.game-title-section {
+  text-align: center;
+  margin-bottom: 60px;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: flex-end;
+.game-title-section h2 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 36px;
+  color: #435766;
+margin-top: 100px;
+  margin-bottom: 210px;
 }
 
-/* Main Content */
-.main-content {
-    padding: 80px 0;
-    background-color: #f0f0f0;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 32px;
-    color: #333;
-    margin-bottom: 50px;
-    font-weight: 300;
-}
-
-.action-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 60px;
-}
-
-/* Video Section */
+/* Видео - используем Video.png */
 .video-section {
-    margin: 60px 0;
+  margin-bottom: 80px;
 }
 
-.video-container {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    height: 500px;
-    margin: 0 auto;
-    background: url(./pictures/picter2.png) center/cover;
-    border-radius: 4px;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+.video-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-thumb {
+  width: 100%;
+  display: block;
 }
 
 .play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
 }
 
-.play-button:hover {
-    transform: translate(-50%, -50%) scale(1.1);
+/* Особенности - используем iw-key-art.png и ranked-callofduty-lead.png */
+.features {
+  margin-bottom: 80px;
 }
 
-.play-button svg {
-    width: 35px;
-    height: 35px;
-    margin-left: 5px;
+.feature-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
 }
 
-/* Content Blocks */
-.content-block {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    margin: 100px 0;
+.feature-row.reverse {
+  flex-direction: row-reverse;
 }
 
-.content-block.reverse {
-    flex-direction: row-reverse;
+.feature-text,
+.feature-image {
+  flex: 1;
 }
 
-.content-text {
-    flex: 1;
+.feature-text h3 {
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 36px;
+color: #435766;
+padding-right: 126px;
+padding-bottom: 250px;
 }
 
-.content-text h3 {
-    font-size: 32px;
-    color: #333;
-    line-height: 1.3;
-    font-weight: 300;
+.feature-image img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
 }
 
-.content-image {
-    flex: 1;
+/* Спецификации */
+.specs {
+  text-align: center;
 }
 
-.content-image img {
-    width: 100%;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Technical Specifications */
-.tech-specs {
-    margin: 100px 0;
+.specs h2 {
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 36px;
+color: #435766;
+padding-bottom: 44px;
 }
 
 .specs-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+  text-align: left;
 }
 
-.spec-item p {
-    color: #555;
-    font-size: 14px;
-    line-height: 1.7;
+.spec-item {
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 21px;
+line-height: 114%;
+color: #435766;
+}
+.spec h2{
+  font-family: var(--font-family);
+font-weight: 400;
+font-size: 36px;
+color: #435766;
+padding-bottom: 44px;
 }
 
-/* Bottom Buttons */
-.bottom-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 80px;
+.specs-buttons {
+  margin-top: 30px;
 }
 
-/* Footer */
+/* Футер */
 .footer {
-    background-color: #1a1a1a;
-    color: white;
-    padding: 70px 0 30px;
+  background: #373a3c;
+  color: white;
+  padding: 60px 40px 20px;
 }
 
 .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
-    margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
 }
 
-.footer-title {
-    color: #7ED321;
-    font-size: 15px;
-    margin-bottom: 25px;
-    font-weight: 600;
+.footer-col h4 {
+  color: #8dd83d;
+  margin-bottom: 20px;
 }
 
-.footer-links {
-    list-style: none;
+.footer-col ul {
+  list-style: none;
 }
 
-.footer-links li {
-    margin-bottom: 15px;
+.footer-col li {
+  margin-bottom: 10px;
+  color: #ccc;
+  cursor: pointer;
 }
 
-.footer-links a {
-    color: #ccc;
-    text-decoration: none;
-    font-size: 13px;
-    transition: color 0.3s;
+.social-icons {
+  display: flex;
+  gap: 15px;
 }
 
-.footer-links a:hover {
-    color: #7ED321;
-}
-
-.social-links {
-    display: flex;
-    gap: 20px;
-}
-
-.social-link {
-    color: #7ED321;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-link:hover {
-    color: #9eef3a;
-    transform: translateY(-3px);
+.social-icons span {
+  cursor: pointer;
 }
 
 .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 30px;
-    border-top: 1px solid #333;
-    font-size: 13px;
-    color: #888;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid #4c5052;
+  color: #999;
+  font-size: 0.9rem;
 }
 
-/* Responsive Design */
+/* ===== МОБИЛЬНАЯ АДАПТАЦИЯ HEADER ===== */
 @media (max-width: 768px) {
-    .nav-list {
-        display: none;
-    }
-    
-    .hero-title {
-        font-size: 36px;
-    }
-    
-    .hero-content {
-        text-align: center;
-        padding-top: 100px;
-    }
-    
-    .hero-buttons {
-        justify-content: center;
-    }
-    
-    .content-block,
-    .content-block.reverse {
-        flex-direction: column;
-        gap: 30px;
-    }
-    
-    .specs-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    
-    .search-input {
-        width: 150px;
-    }
-    
-    .video-container {
-        height: 300px;
-    }
-} 
+  header {
+    gap: 0;
+    padding: 12px 20px;
+    flex-wrap: nowrap;
+  }
+
+  /* Показываем гамбургер на мобильных */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Анимация гамбургера в крестик при открытом меню */
+  .menu-toggle:checked + .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle:checked + .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  /* Мобильное меню - скрыто по умолчанию */
+  header .right {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #2b2b2b;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+    z-index: 99;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  /* Показываем меню при checked */
+  .menu-toggle:checked ~ .right {
+    transform: translateY(0);
+  }
+
+  /* Вертикальная навигация */
+  nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 18px;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+    width: 100%;
+  }
+
+  /* Поиск на всю ширину */
+  .search-bar {
+    width: 100%;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+
+  /* My Xbox тоже на всю ширину */
+  .my-xbox {
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 10px;
+  }
+}
+
+/* Остальные медиа-запросы */
+@media (max-width: 768px) {
+  .feature-row,
+  .feature-row.reverse {
+    flex-direction: column;
+  }
+
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    justify-content: center;
+    padding-right: 0;
+  }
+}
