@@ -1,16 +1,16 @@
 @font-face {
   font-family: "HnB";
-  src: url(/fonts/HelveticaNeue-Bold.otf);
+  src: url(/font/HelveticaNeue-Bold.otf);
 }
 
 @font-face {
   font-family: "HelveticaNeue";
-  src: url(/fonts/HelveticaNeue-Roman.otf);
+  src: url(/font/HelveticaNeue-Roman.otf);
 }
 
 @font-face {
   font-family: "HnL";
-  src: url(/fonts/HelveticaNeue-Light.otf);
+  src: url(/font/HelveticaNeue-Light.otf);
 }
 
 * {
@@ -64,4 +64,28 @@ nav a {
 
 nav a:hover {
   color: white;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 4px;
+  padding: 6px 12px;
+  gap: 8px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 200px;
+}
+
+.my-xbox {
+  color: #107c10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
